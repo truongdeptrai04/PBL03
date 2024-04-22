@@ -6,123 +6,95 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.Color;
+import java.awt.Dimension;
 
-import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JEditorPane;
-import javax.swing.JSplitPane;
-import javax.swing.JSlider;
-import javax.swing.JToggleButton;
-import javax.swing.JLayeredPane;
-import javax.swing.border.SoftBevelBorder;
-import javax.swing.border.BevelBorder;
-import java.awt.Component;
 import javax.swing.border.LineBorder;
-import javax.swing.JTextField;
-import java.awt.Canvas;
-import javax.swing.JPasswordField;
 import javax.swing.JLabel;
 import java.awt.Font;
-import java.awt.Image;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-
+import javax.swing.JTextField;
 import javax.swing.SwingConstants;
+import javax.swing.JPasswordField;
 import javax.swing.JButton;
-import javax.swing.border.EtchedBorder;
-import javax.swing.UIManager;
+import javax.swing.ImageIcon;
 
 public class loginView extends JFrame {
 
-    private JPanel contentPane;
-    private JTextField textField;
-    private JPasswordField passwordField;
-    private JLabel imageLabel;
+	private static final long serialVersionUID = 1L;
+	private JPanel contentPane;
+	private JTextField textField;
+	private JPasswordField passwordField;
+	ImageIcon loginImage = new ImageIcon(loginView.class.getResource("/image/loginImage.jpg"));
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					loginView frame = new loginView();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
 
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    loginView frame = new loginView();
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
+	/**
+	 * Create the frame.
+	 */
+	public loginView() {
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 1214, 839);
+		contentPane = new JPanel();
+		contentPane.setBackground(new Color(243, 249, 251));
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
-//    private void loadImage(String imagePath) {
-//        try {
-//            // Đọc ảnh từ tệp tin
-//            BufferedImage img = ImageIO.read(new File(imagePath));
-//            if (img == null) {
-//                System.out.println("Không thể đọc tệp tin ảnh.");
-//                return;
-//            }
-//            // Thay đổi kích thước ảnh nếu cần
-//            Image scaledImage = img.getScaledInstance(imageLabel.getWidth(), imageLabel.getHeight(), Image.SCALE_SMOOTH);
-//            // Đặt ảnh vào JLabel
-//            imageLabel.setIcon(new ImageIcon(scaledImage));
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-
-    public loginView() {
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 1400, 800);
-        contentPane = new JPanel();
-        contentPane.setAutoscrolls(true);
-        contentPane.setBackground(new Color(255, 255, 255));
-        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-
-        setContentPane(contentPane);
-        contentPane.setLayout(null);
-
-        JPanel panel = new JPanel();
-        panel.setBorder(new LineBorder(new Color(19, 125, 21), 3, true));
-        panel.setBackground(new Color(255, 255, 255));
-        panel.setBounds(200, 100, 1000, 600);
-        contentPane.add(panel);
-        panel.setLayout(null);
-
-        textField = new JTextField();
-        textField.setBorder(new LineBorder(new Color(0, 128, 0), 5, true));
-        textField.setFont(new Font("Tahoma", Font.PLAIN, 30));
-        textField.setBounds(60, 140, 400, 70);
-        panel.add(textField);
-        textField.setColumns(10);
-
-        passwordField = new JPasswordField();
-        passwordField.setBorder(new LineBorder(new Color(0, 128, 0), 5, true));
-        passwordField.setFont(new Font("Tahoma", Font.PLAIN, 30));
-        passwordField.setBounds(60, 250, 400, 70);
-        panel.add(passwordField);
-
-        JLabel lblNewLabel = new JLabel("Login");
-        lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 40));
-        lblNewLabel.setBounds(190, 50, 120, 55);
-        panel.add(lblNewLabel);
-
-        imageLabel = new JLabel("");
-        imageLabel.setIcon(new ImageIcon("C:\\Users\\truong\\Desktop\\OIP.jpg"));
-        imageLabel.setBounds(513, 151, 376, 351);
-        panel.add(imageLabel);
-        
-        JButton btnNewButton = new JButton("L O G I N");
-        btnNewButton.setBackground(new Color(47, 138, 86));
-        btnNewButton.setBorder(UIManager.getBorder("DesktopIcon.border"));
-        btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 30));
-        btnNewButton.setBounds(60, 402, 400, 70);
-        panel.add(btnNewButton);
-//        loadImage("C:/Users/truong/git/repository/image/IMG_2812.HEIC");
-
-        JPanel panel_1 = new JPanel();
-        panel_1.setBackground(new Color(19, 125, 21));
-        panel_1.setBounds(0, 0, 1390, 390);
-        contentPane.add(panel_1);
-    }
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		JPanel panel = new JPanel();
+		panel.setBorder(new LineBorder(new Color(192, 192, 192), 5));
+		panel.setBackground(new Color(255, 255, 255));
+		panel.setBounds(200, 190, 800, 500);
+		contentPane.add(panel);
+		panel.setLayout(null);
+		
+		JLabel lblNewLabel = new JLabel("L O G I N");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel.setBackground(new Color(192, 192, 192));
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 32));
+		lblNewLabel.setBounds(110, 42, 200, 50);
+		panel.add(lblNewLabel);
+		
+		textField = new JTextField();
+		textField.setFont(new Font("Tahoma", Font.PLAIN, 26));
+		textField.setBounds(60, 130, 300, 50);
+		panel.add(textField);
+		textField.setColumns(10);
+		
+		passwordField = new JPasswordField();
+		passwordField.setFont(new Font("Tahoma", Font.PLAIN, 26));
+		passwordField.setBounds(60, 215, 300, 50);
+		panel.add(passwordField);
+		
+		JButton btnNewButton = new JButton("LOGIN");
+		btnNewButton.setForeground(new Color(255, 255, 255));
+		btnNewButton.setBackground(new Color(71, 150, 189));
+		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 27));
+		btnNewButton.setBounds(60, 320, 300, 50);
+		panel.add(btnNewButton);
+		
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon(loginView.class.getResource("/image/loginImage.jpg")));
+		lblNewLabel_1.setPreferredSize(new Dimension(loginImage.getIconWidth(), loginImage.getIconHeight()));
+		lblNewLabel_1.setBounds(430, 100, 300, 300);
+		panel.add(lblNewLabel_1);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(71, 150, 189));
+		panel_1.setBounds(0, 0, 1200, 80);
+		contentPane.add(panel_1);
+	}
 }
