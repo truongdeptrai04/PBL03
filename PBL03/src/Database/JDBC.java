@@ -27,7 +27,8 @@ public class JDBC {
 			e.printStackTrace();
 		}
 		//tesst
-		//test nưa
+		//test    
+		// phai test thgem
 	}
 
 }
