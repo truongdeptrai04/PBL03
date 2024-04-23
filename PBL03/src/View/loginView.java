@@ -114,6 +114,9 @@ public class loginView extends JFrame {
 					} 
 					else if (rs.next())// Neu co du lieu
 					{
+						AccountManagement ac = new AccountManagement();
+						ac.setVisible(true);
+						dispose();
 						JOptionPane.showMessageDialog(btnNewButton,"Đăng nhập thành công");
 					} else {
 						JOptionPane.showMessageDialog(btnNewButton,"Đăng nhập thất bại");
