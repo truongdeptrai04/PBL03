@@ -26,9 +26,7 @@ public class JDBC {
 		} catch ( Exception e) {
 			e.printStackTrace();
 		}
-		//tesst
-		//test    
-		// phai test thgem
+		
 	}
 
 }
