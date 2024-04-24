@@ -11,6 +11,9 @@ import java.awt.Dimension;
 import javax.swing.border.LineBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 import javax.swing.JPasswordField;
@@ -21,7 +24,7 @@ public class loginView extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
-	private JTextField textField;
+	private JTextField txtZxzxz;
 	private JPasswordField passwordField;
 	ImageIcon loginImage = new ImageIcon(loginView.class.getResource("/image/loginImage.jpg"));
 	/**
@@ -39,10 +42,10 @@ public class loginView extends JFrame {
 			}
 		});
 	}
-
 	/**
 	 * Create the frame.
 	 */
+	
 	public loginView() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1214, 839);
@@ -64,16 +67,20 @@ public class loginView extends JFrame {
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setBackground(new Color(192, 192, 192));
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 32));
-		lblNewLabel.setBounds(110, 42, 200, 50);
+		lblNewLabel.setBounds(110, 35, 200, 50);
 		panel.add(lblNewLabel);
 		
-		textField = new JTextField();
-		textField.setFont(new Font("Tahoma", Font.PLAIN, 26));
-		textField.setBounds(60, 130, 300, 50);
-		panel.add(textField);
-		textField.setColumns(10);
+		txtZxzxz = new JTextField();
+		txtZxzxz.setText("Tài khoản");
+		txtZxzxz.setBorder(new LineBorder(new Color(171, 173, 179), 2));
+		txtZxzxz.setToolTipText("");
+		txtZxzxz.setFont(new Font("Tahoma", Font.PLAIN, 26));
+		txtZxzxz.setBounds(60, 130, 300, 50);
+		panel.add(txtZxzxz);
+		txtZxzxz.setColumns(10);
 		
 		passwordField = new JPasswordField();
+		passwordField.setBorder(new LineBorder(new Color(171, 173, 179), 2));
 		passwordField.setFont(new Font("Tahoma", Font.PLAIN, 26));
 		passwordField.setBounds(60, 215, 300, 50);
 		panel.add(passwordField);
@@ -87,9 +94,10 @@ public class loginView extends JFrame {
 		
 		
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon(loginView.class.getResource("/image/loginImage.jpg")));
+		lblNewLabel_1.setBorder(new LineBorder(new Color(0, 128, 192), 4));
+		lblNewLabel_1.setIcon(new ImageIcon(loginView.class.getResource("/image/loginImage2.jpg")));
 		lblNewLabel_1.setPreferredSize(new Dimension(loginImage.getIconWidth(), loginImage.getIconHeight()));
-		lblNewLabel_1.setBounds(430, 100, 300, 300);
+		lblNewLabel_1.setBounds(430, 100, 290, 300);
 		panel.add(lblNewLabel_1);
 		
 		JPanel panel_1 = new JPanel();
