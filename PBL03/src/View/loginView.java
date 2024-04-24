@@ -9,10 +9,21 @@ import java.awt.Color;
 import java.awt.Dimension;
 
 import javax.swing.border.LineBorder;
+
+import Database.JDBC;
+
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -86,6 +97,44 @@ public class loginView extends JFrame {
 		panel.add(passwordField);
 		
 		JButton btnNewButton = new JButton("LOGIN");
+		btnNewButton.addActionListener(new ActionListener() {
+			
+			public void actionPerformed(ActionEvent e) {
+				try {
+					//TAO KET NOI
+					Connection connection = JDBC.getConnection();
+					// Buoc2 :Tao doi tuong Statement
+					Statement st = connection.createStatement();
+					ResultSet rs;
+					//CAU TRUY VAN SQL
+					String sql = "select * from login where userName=? and passWord=?";
+					// Cho phép chỉ định tham số đầu vào
+					PreparedStatement ps = connection.prepareCall(sql);
+					ps.setString(1,txtZxzxz.getText());
+					ps.setString(2,passwordField.getText());
+					// ExcuteQuerry trả về resultset khi thực thi câu lệnh
+					rs = ps.executeQuery();
+					
+					if(txtZxzxz.getText().equals("") || passwordField.getText().equals("")){
+						JOptionPane.showMessageDialog(btnNewButton, "Chưa nhập Username và Password");						
+					} 
+					else if (rs.next())// Neu co du lieu
+					{
+						AccountManagement ac = new AccountManagement();
+						ac.setVisible(true);
+						dispose();
+						JOptionPane.showMessageDialog(btnNewButton,"Đăng nhập thành công");
+					} else {
+						JOptionPane.showMessageDialog(btnNewButton,"Đăng nhập thất bại");
+					}
+
+					 
+				} catch (Exception e1) {
+					
+				}
+				
+			}
+		});
 		btnNewButton.setForeground(new Color(255, 255, 255));
 		btnNewButton.setBackground(new Color(71, 150, 189));
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 27));
@@ -104,5 +153,7 @@ public class loginView extends JFrame {
 		panel_1.setBackground(new Color(71, 150, 189));
 		panel_1.setBounds(0, 0, 1200, 80);
 		contentPane.add(panel_1);
+		
+		
 	}
 }
