@@ -20,6 +20,8 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.Dimension;
 import javax.swing.border.MatteBorder;
 import javax.swing.DebugGraphics;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class AccountManagement extends JFrame {
 
@@ -69,6 +71,13 @@ public class AccountManagement extends JFrame {
 		panel.add(lbWelcome);
 		
 		JButton btnExit = new JButton("");
+		btnExit.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				loginView ac = new loginView();
+				ac.setVisible(true);
+				dispose();
+			}
+		});
 		btnExit.setFocusPainted(false);
 		btnExit.setBorder(new LineBorder(new Color(0, 0, 0), 0));
 		btnExit.setBackground(new Color(71, 150, 189));
