@@ -6,10 +6,6 @@ public class ProductType {
     private String describe;
     private static int IDCounter;
     public ProductType(String typeName, String describe) {
-    	this.ID = "PDT";
-    	String counter = String.format("%03d", IDCounter);
-    	ID += counter;
-    	IDCounter++;
     	this.typeName = typeName;
     	this.describe = describe;
     }

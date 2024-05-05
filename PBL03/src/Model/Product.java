@@ -1,8 +1,8 @@
 package Model;
 
-class Product {
+public class Product {
 	private String ID;
-	private ProductType type;
+	private String type;
 	private Discount discount;
 	private String name;
 	private double price;
@@ -13,7 +13,7 @@ class Product {
 	
     public Product() {
 	}
-	public Product(ProductType type, Discount discount, String name, double price, int quantity, String color, String size) {
+	public Product(String type, Discount discount, String name, double price, int quantity, String color, String size) {
     	this.ID = "PD";
         String counter = String.format("%05",IDCounter);
         ID += counter;
@@ -26,10 +26,10 @@ class Product {
         this.color = color;
         this.size = size;	
     }
-	public ProductType getType() {
+	public String getType() {
 		return type;
 	}
-	public void setType(ProductType type) {
+	public void setType(String type) {
 		this.type = type;
 	}
 	public Discount getDiscount() {
