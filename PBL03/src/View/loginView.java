@@ -101,7 +101,7 @@ public class loginView extends JFrame {
 					Statement st = connection.createStatement();
 					ResultSet rs;
 					//CAU TRUY VAN SQL
-					String sql = "select * from login where userName=? and passWord=?";
+					String sql = "select * from account where userName=? and passWord=?";
 					// Cho phép chỉ định tham số đầu vào
 					PreparedStatement ps = connection.prepareCall(sql);
 					ps.setString(1,textField.getText());
@@ -114,7 +114,7 @@ public class loginView extends JFrame {
 					} 
 					else if (rs.next())// Neu co du lieu
 					{
-						AccountManagement ac = new AccountManagement();
+						MainJFrame ac = new MainJFrame();
 						ac.setVisible(true);
 						dispose();
 						JOptionPane.showMessageDialog(btnNewButton,"Đăng nhập thành công");
