@@ -147,7 +147,7 @@ public class loginView extends JFrame {
 		panel_1.setBounds(0, 0, 1200, 80);
 		contentPane.add(panel_1);
 		
-		
+		// content
 	}
 }
-//test 1
+
