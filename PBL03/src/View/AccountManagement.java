@@ -32,6 +32,7 @@ public class AccountManagement extends JFrame {
 	/**
 	 * Launch the application.
 	 */
+	//test 1
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -201,3 +202,4 @@ public class AccountManagement extends JFrame {
 		panel_2.add(lbAdd);
 	}
 }
+//compile test

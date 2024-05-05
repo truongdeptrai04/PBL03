@@ -3,7 +3,7 @@ package Database;
 import java.sql.*;
 import java.util.ArrayList;
 
-import com.mysql.jdbc.PreparedStatement;
+//import com.mysql.jdbc.PreparedStatement;
 
 import Model.Product;
 
