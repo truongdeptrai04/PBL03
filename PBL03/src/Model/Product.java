@@ -3,7 +3,7 @@ package Model;
 public class Product {
 	private String ID;
 	private String type;
-	private Discount discount;
+	private String discountID;
 	private String name;
 	private double price;
 	private int quantity;
@@ -13,13 +13,10 @@ public class Product {
 	
     public Product() {
 	}
-	public Product(String type, Discount discount, String name, double price, int quantity, String color, String size) {
-    	this.ID = "PD";
-        String counter = String.format("%05",IDCounter);
-        ID += counter;
-        IDCounter++;
+	public Product(String ID, String name, String type,  String color, double price, int quantity, String size, String discountID) {
+    	this.ID = ID;
         this.type = type;
-        this.discount = discount;
+        this.discountID = discountID;
         this.name = name;
         this.price = price;
         this.quantity = quantity;
@@ -32,17 +29,17 @@ public class Product {
 	public void setType(String type) {
 		this.type = type;
 	}
-	public Discount getDiscount() {
-		return discount;
+	public String getDiscount() {
+		return discountID;
 	}
-	public void setDiscount(Discount discount) {
-		this.discount = discount;
+	public void setDiscount(String discountID) {
+		this.discountID = discountID;
 	}
     public String getID() {
 		return ID;
 	}
 	public void setID(String iD) {
-		ID = iD;
+		this.ID = iD;
 	}
     public void setName(String name) {
     	this.name = name;

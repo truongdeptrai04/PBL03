@@ -53,7 +53,7 @@ public class ScreenSwitchingController {
 
 		
 		@Override
-		public void mouseClicked(MouseEvent e) {
+		public void mousePressed(MouseEvent e) {
 			switch(kind) {
 				case "Product":
 					node = new ProductJPanel();
@@ -86,7 +86,7 @@ public class ScreenSwitchingController {
 		}
 
 		@Override
-		public void mousePressed(MouseEvent e) {
+		public void mouseClicked(MouseEvent e) {
 			kindSelected = kind;
 			jbItem.setBackground(new Color(218, 238 ,245));
 			jbItem.setForeground(new Color(0, 0, 0));

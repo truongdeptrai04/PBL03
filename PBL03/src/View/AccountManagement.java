@@ -164,9 +164,9 @@ public class AccountManagement extends JFrame {
 		panel_2.add(scrollPane_1);
 		
 		table = new JTable();
+		table.setShowVerticalLines(false);
 		table.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		table.setForeground(new Color(0, 0, 0));
-		table.setShowVerticalLines(false);
 		table.setFillsViewportHeight(true);
 		table.setModel(new DefaultTableModel(
 			new Object[][] {

@@ -1,4 +1,4 @@
-package Database;
+package DAO;
 import java.sql.*;
 public class JDBC {
 	public static Connection getConnection() {

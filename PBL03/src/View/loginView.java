@@ -10,7 +10,7 @@ import java.awt.Dimension;
 
 import javax.swing.border.LineBorder;
 
-import Database.JDBC;
+import DAO.JDBC;
 
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
@@ -117,7 +117,6 @@ public class loginView extends JFrame {
 						MainJFrame ac = new MainJFrame();
 						ac.setVisible(true);
 						dispose();
-						JOptionPane.showMessageDialog(btnNewButton,"Đăng nhập thành công");
 					} else {
 						JOptionPane.showMessageDialog(btnNewButton,"Đăng nhập thất bại");
 					}

@@ -39,29 +39,8 @@ public class MainJFrame extends JFrame {
 	private JPanel contentPane, panel, pnOption, pnView;
 	private JLabel lbWelcome, lbShowroom;
 	private JButton btnExit, btnProduct, btnInvoice, btnDiscount, btnCustomer, btnAccount, btnStatistics;
-	
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					MainJFrame frame = new MainJFrame();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
 
-	/**
-	 * Create the frame.
-	 */
 	public MainJFrame() {
-		
-		
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1214, 839);
@@ -70,8 +49,6 @@ public class MainJFrame extends JFrame {
 		
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		
 		
 		panel = new JPanel();
 		panel.setBackground(new Color(71, 150, 189));
