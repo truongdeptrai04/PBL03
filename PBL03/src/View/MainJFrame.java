@@ -38,8 +38,21 @@ public class MainJFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane, panel, pnOption, pnView;
 	private JLabel lbWelcome, lbShowroom;
-	private JButton btnExit, btnProduct, btnInvoice, btnDiscount, btnCustomer, btnAccount, btnStatistics;
+	private JButton btnExit, btnProduct, btnInvoice, btnCustomer, btnAccount, btnStatistics;
 
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					MainJFrame frame = new MainJFrame();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+	
 	public MainJFrame() {
 		
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -60,7 +73,7 @@ public class MainJFrame extends JFrame {
 		lbWelcome.setForeground(new Color(255, 255, 255));
 		lbWelcome.setIcon(new ImageIcon(MainJFrame.class.getResource("/image/managerIcon6.png")));
 		lbWelcome.setFont(new Font("Tahoma", Font.ITALIC, 24));
-		lbWelcome.setBounds(862, 11, 259, 58);
+		lbWelcome.setBounds(50, 11, 259, 58);
 		panel.add(lbWelcome);
 		
 		btnExit = new JButton("");
@@ -102,15 +115,6 @@ public class MainJFrame extends JFrame {
 		btnInvoice.setBounds(0, 75, 215, 75);
 		pnOption.add(btnInvoice);
 		
-		btnDiscount = new JButton("Discount  ");
-		btnDiscount.setBackground(new Color(255, 255, 254));
-		btnDiscount.setBorder(new LineBorder(new Color(0, 0, 0), 0));
-		btnDiscount.setFocusPainted(false);
-		btnDiscount.setIcon(new ImageIcon(MainJFrame.class.getResource("/image/DiscountIcon.png")));
-		btnDiscount.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		btnDiscount.setBounds(0, 150, 215, 75);
-		pnOption.add(btnDiscount);
-		
 		btnCustomer = new JButton("Customer ");
 		btnCustomer.setBackground(new Color(255, 255, 254));
 		btnCustomer.setBorder(new LineBorder(new Color(0, 0, 0), 0));
@@ -138,6 +142,15 @@ public class MainJFrame extends JFrame {
 		btnStatistics.setBounds(0, 375, 215, 75);
 		pnOption.add(btnStatistics);
 		
+		JButton btnSale = new JButton("Sale         ");
+		btnSale.setIcon(new ImageIcon(MainJFrame.class.getResource("/image/sale3.png")));
+		btnSale.setFont(new Font("Tahoma", Font.PLAIN, 18));
+		btnSale.setFocusPainted(false);
+		btnSale.setBorder(new LineBorder(new Color(0, 0, 0), 0));
+		btnSale.setBackground(new Color(255, 255, 254));
+		btnSale.setBounds(0, 150, 215, 75);
+		pnOption.add(btnSale);
+		
 		lbShowroom = new JLabel("SHOWROOM - 01");
 		lbShowroom.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lbShowroom.setHorizontalAlignment(SwingConstants.CENTER);
@@ -156,10 +169,11 @@ public class MainJFrame extends JFrame {
 		ArrayList<OptionBean> listItem = new ArrayList();
 		listItem.add(new OptionBean("Product", btnProduct));
 		listItem.add(new OptionBean("Invoice", btnInvoice));
-		listItem.add(new OptionBean("Discount", btnDiscount));
+		listItem.add(new OptionBean("Sale", btnSale));
 		listItem.add(new OptionBean("Customer", btnCustomer));
 		listItem.add(new OptionBean("Account", btnAccount));
 		listItem.add(new OptionBean("Statistic", btnStatistics));
+
 		controller.setEvent(listItem);
 		
 	}

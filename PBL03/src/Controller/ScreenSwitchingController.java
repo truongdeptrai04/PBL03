@@ -8,11 +8,12 @@ import java.util.ArrayList;
 import javax.swing.*;
 
 import Bean.OptionBean;
-import View.AccountJPanel;
+import View.EmployeeJPanel;
 import View.CustomerJPanel;
 import View.DiscountJPanel;
 import View.InvoiceJPanel;
 import View.ProductJPanel;
+import View.SaleJPanel;
 import View.StatisticJPanel;
 
 public class ScreenSwitchingController {
@@ -61,11 +62,14 @@ public class ScreenSwitchingController {
 				case "Invoice":
 					node = new InvoiceJPanel();
 					break;
+				case "Sale":
+					node = new SaleJPanel();
+					break;
 				case "Discount":
 					node = new DiscountJPanel();
 					break;
 				case "Account":
-					node = new AccountJPanel();
+					node = new EmployeeJPanel();
 					break;
 				case "Customer":
 					node = new CustomerJPanel();

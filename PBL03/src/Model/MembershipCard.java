@@ -1,13 +1,16 @@
 package Model;
 
 public class MembershipCard {
-    private String CardID;
+    private String cardID;
     private Discount discount;
     private Brand brand;
     private String rank;
-    
+    public MembershipCard() {
+    	brand = new Brand();
+    	discount = new Discount();
+    }
     public MembershipCard(String CardID, Discount discount, Brand brand, String rank) {
-    	this.CardID = CardID;
+    	this.cardID = CardID;
     	this.discount = discount;
     	this.brand = brand;
     	this.rank = rank;	
@@ -26,16 +29,16 @@ public class MembershipCard {
 		this.discount = discount;
 	}
 	public String getCardID() {
-		return CardID;
+		return cardID;
 	}
 	public void setCardID(String cardID) {
-		CardID = cardID;
+		this.cardID = cardID;
 	}
 	public String getRank() {
 		return rank;
 	}
 	public void setRank(String rank) {
-		rank = rank;
+		this.rank = rank;
 	}
     
 }

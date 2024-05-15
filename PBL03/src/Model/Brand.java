@@ -4,7 +4,9 @@ public class Brand {
     private String brandID;
     private String brandName;
     private static int brandCounter = 1;
-    
+    public Brand() {
+    	
+    }
     public Brand(String brandName){
     	String brandID = "BR";
     	String counterString = String.format("%04d", brandCounter);

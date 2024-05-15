@@ -91,6 +91,7 @@ public class loginView extends JFrame {
 		panel.add(passwordField);
 		
 		JButton btnNewButton = new JButton("LOGIN");
+		btnNewButton.setFocusPainted(false);
 		btnNewButton.addActionListener(new ActionListener() {
 			
 			public void actionPerformed(ActionEvent e) {

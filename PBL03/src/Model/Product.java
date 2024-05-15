@@ -5,7 +5,7 @@ public class Product {
 	private String type;
 	private String discountID;
 	private String name;
-	private double price;
+	private int price;
 	private int quantity;
 	private String color;
 	private String size;
@@ -13,7 +13,7 @@ public class Product {
 	
     public Product() {
 	}
-	public Product(String ID, String name, String type,  String color, double price, int quantity, String size, String discountID) {
+	public Product(String ID, String name, String type,  String color, int price, int quantity, String size, String discountID) {
     	this.ID = ID;
         this.type = type;
         this.discountID = discountID;
@@ -21,7 +21,7 @@ public class Product {
         this.price = price;
         this.quantity = quantity;
         this.color = color;
-        this.size = size;	
+        this.size = size;
     }
 	public String getType() {
 		return type;
@@ -47,10 +47,10 @@ public class Product {
     public String getName() {
     	return this.name;
     }
-    public void setPrice(double price) {
+    public void setPrice(int price) {
     	this.price = price;
     }
-    public double getPrice() {
+    public int getPrice() {
     	return this.price;
     }
     public void setQuantity(int quantity) {

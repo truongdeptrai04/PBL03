@@ -149,14 +149,14 @@ public class ProductManagerController {
             }
         });
         // design
-        table.getTableHeader().setFont(new Font("Arial", Font.BOLD, 18));
+        table.getTableHeader().setFont(new Font("Arial", Font.BOLD, 16));
         table.getTableHeader().setBackground(new Color(218, 245, 244));
         table.getTableHeader().setPreferredSize(new Dimension(100, 50));
         table.setFillsViewportHeight(true);
-        table.setRowHeight(50);
+        table.setRowHeight(25);
         table.validate();
         table.repaint();
-        table.setFont(new Font("Tahoma", Font.PLAIN, 18));
+        table.setFont(new Font("Tahoma", Font.PLAIN, 14));
         table.setShowVerticalLines(false);
         
         DefaultTableCellRenderer centerRenderer = new DefaultTableCellRenderer();

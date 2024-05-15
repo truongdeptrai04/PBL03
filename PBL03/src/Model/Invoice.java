@@ -1,18 +1,23 @@
 package Model;
 import java.util.*;
-class Invoice {
+public class Invoice {
 	private String invoiceID;
     private Employee employee;
     private Customer customer;
     private Store store;
     private Discount discount;
-    private InvoiceDetail invoiceDetail;
     private Date date;
     private String paymentMethod;
     private String PurchasingMethod;
-    private double total;
+    private int total;
     private static int IDCounter = 1;
     
+    public Invoice() {
+    	employee = new Employee();
+    	customer = new Customer();
+    	store = new Store();
+    	discount = new Discount();
+    }
     public Invoice(Employee employee, Customer customer, Store store, Discount discount, InvoiceDetail invoiceDetail,  Date date, String paymentMethod, String PurchasingMethod) {
         this.invoiceID = "IN";
         String Counter = String.format("%05d", IDCounter);
@@ -22,7 +27,6 @@ class Invoice {
         this.customer = customer;
         this.store = store;
         this.discount = discount;
-        this.invoiceDetail = invoiceDetail;
         this.date = date;
         this.paymentMethod = paymentMethod;
         this.PurchasingMethod = PurchasingMethod;
@@ -68,13 +72,6 @@ class Invoice {
 		this.discount = discount;
 	}
 
-	public InvoiceDetail getInvoiceDetail() {
-		return invoiceDetail;
-	}
-
-	public void setInvoiceDetail(InvoiceDetail invoiceDetail) {
-		this.invoiceDetail = invoiceDetail;
-	}
 
 	public Date getDate() {
 		return date;
@@ -100,11 +97,11 @@ class Invoice {
 		PurchasingMethod = purchasingMethod;
 	}
 
-	public double getTotal() {
+	public int getTotal() {
 		return total;
 	}
 
-	public void setTotal(double total) {
+	public void setTotal(int total) {
 		this.total = total;
 	}
 }

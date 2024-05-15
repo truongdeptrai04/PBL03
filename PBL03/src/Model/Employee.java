@@ -4,12 +4,22 @@ public class Employee {
     private String ID;
     private Store store;
     private String name;
-    private String nickName;
-	private String pass;
+    private Account account;
     private String email;
-    private String address;
-    private String Position;
+    private String phoneNumber;
+	private String address;
+	private String position;
     private static int employeeCount = 1;
+    public String getPosition() {
+		return position;
+	}
+	public void setPosition(String position) {
+		this.position = position;
+	}
+	public Employee() {
+    	store = new Store();
+    	account = new Account();
+    }
     public Employee(Store store, String name, String nickName, String pass, String email, String address) {
     	this.ID = "EP";
     	String IDcounter = String.format("%04d", employeeCount);
@@ -17,13 +27,21 @@ public class Employee {
     	employeeCount++;
     	this.store = store;
     	this.name = name;
-    	this.nickName = nickName;
-    	this.pass = pass;
     	this.email = email;
     	this.address = address;
-    	this.Position = "Employee";
     }
-    
+    public String getPhoneNumber() {
+		return phoneNumber;
+	}
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+    public Account getAccount() {
+    	return account;
+    }
+    public void setAccount(Account account) {
+    	this.account = account;
+    }
     public String getID() {
 		return ID;
 	}
@@ -42,15 +60,6 @@ public class Employee {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getNickName() {
-		return nickName;
-	}
-	public void setNickName(String nickName) {
-		this.nickName = nickName;
-	}
-	public String getPass() {
-		return pass;
-	}
 	public void setPass(String pass) {
 		pass = pass;
 	}
@@ -65,11 +74,5 @@ public class Employee {
 	}
 	public void setAddress(String address) {
 		this.address = address;
-	}
-	public String getPosition() {
-		return Position;
-	}
-	public void setPosition(String position) {
-		Position = position;
 	}
 }

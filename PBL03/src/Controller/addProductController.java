@@ -27,6 +27,7 @@ import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.RowFilter;
+import javax.swing.border.LineBorder;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.table.DefaultTableCellRenderer;
@@ -91,18 +92,20 @@ public class addProductController {
 //        // set event
 //        setEvent();
 //    }
+    
     public void updateRowNumbers(DefaultTableModel model) {
         for (int i = 0; i < model.getRowCount(); i++) {
             model.setValueAt(i + 1, i, 0); 
         }
     }
+    
     private void addDataToTable() {
     	int cn = this.cn;
         String ProductName = jtfProductName.getText();
         String ProductType = jtfProductType.getText();
         String Color = jtfColor.getText();
         String Size = jtfSize.getText();
-        double Price = Double.parseDouble(jtfPrice.getText());
+        int Price = Integer.parseInt(jtfPrice.getText());
         // Thêm dữ liệu mới vào model của JTable
         this.model.addRow(new Object[]{cn, ProductName, ProductType, Color, Size, Price});
         this.cn++;
@@ -112,6 +115,7 @@ public class addProductController {
         this.jtfSize.setText("");
         this.jtfPrice.setText("");
     }
+    
     public ArrayList<Product> getProductsFromTable(JTable table) {
         ArrayList<Product> productList = new ArrayList<>();
 
@@ -128,7 +132,7 @@ public class addProductController {
             String productType = (String) model.getValueAt(i, 2); // Giả sử cột 2 là ProductType
             String color = (String) model.getValueAt(i, 3); // Giả sử cột 3 là Color
             String size = (String) model.getValueAt(i, 4); // Giả sử cột 4 là Size
-            double price = (double) model.getValueAt(i, 5); // Giả sử cột 5 là Price
+            int price = (int) model.getValueAt(i, 5); // Giả sử cột 5 là Price
 
             Product product = new Product(productID, productName, productType, color, price, quantity, size, DiscountID);
             productList.add(product);
@@ -145,10 +149,8 @@ public class addProductController {
     public void deleteSelectedRow(JTable table, DefaultTableModel model) {
         int selectedRow = table.getSelectedRow();
         if (selectedRow != -1) {
-            // Xóa hàng khỏi mô hình dữ liệu của JTable
                 model.removeRow(selectedRow);
         } else {
-            // Nếu không có hàng nào được chọn, hiển thị thông báo lỗi hoặc thông báo cho người dùng
             JOptionPane.showMessageDialog(null, "Vui lòng chọn một hàng để xóa", "Lỗi", JOptionPane.ERROR_MESSAGE);
         }
     }
@@ -182,8 +184,6 @@ public class addProductController {
         	if(i==1) continue;
             table.getColumnModel().getColumn(i).setCellRenderer(centerRenderer);
         }
-        
-        
         
         //Tuy chinh do rong cac cot
         table.getColumnModel().getColumn(0).setMaxWidth(50);
@@ -232,11 +232,14 @@ public class addProductController {
                     	}else {
                     		
                     	}
-                        jlbMessage.setText("Please enter required data!");
+                    	fillColor();
                     } else {
+                    	fillColor();
                     	if(!isDouble(jtfPrice.getText())){
                     		jlbMessage.setText("Please enter a real number in the Price field!");
                     	}else {
+                    		jlbMessage.setText("(*): Require data");
+                    		
                     		addDataToTable();
 //                          product.setName(jtfProductType.getText().trim());
 //                          product.setNgay_sinh(covertDateToDateSql(jdcNgaySinh.getDate()));
@@ -309,7 +312,7 @@ public class addProductController {
                         }
                     
                 } catch (Exception ex) {
-                    jlbMessage.setText(ex.toString());
+                    ex.printStackTrace();
                 }
             }
 
@@ -370,7 +373,33 @@ public class addProductController {
         		(jtfPrice.getText() != null && !jtfPrice.getText().equalsIgnoreCase(""))
         		;
     }
-    
+    private void fillColor() {
+    	if(jtfProductName.getText() != null && !jtfProductName.getText().equalsIgnoreCase("")) {
+    		jtfProductName.setBorder(new LineBorder(new Color(171, 173, 179)));
+    	}else {
+    		jtfProductName.setBorder(new LineBorder(new Color(252, 3, 3)));
+    	}
+    	if(jtfProductType.getText() != null && !jtfProductType.getText().equalsIgnoreCase("")) {
+    		jtfProductType.setBorder(new LineBorder(new Color(171, 173, 179)));
+    	}else {
+    		jtfProductType.setBorder(new LineBorder(new Color(252, 3, 3)));
+    	}
+    	if(jtfColor.getText() != null && !jtfColor.getText().equalsIgnoreCase("")) {
+    		jtfColor.setBorder(new LineBorder(new Color(171, 173, 179)));
+    	}else {
+    		jtfColor.setBorder(new LineBorder(new Color(252, 3, 3)));
+    	}
+    	if(jtfSize.getText() != null && !jtfSize.getText().equalsIgnoreCase("")) {
+    		jtfSize.setBorder(new LineBorder(new Color(171, 173, 179)));
+    	}else {
+    		jtfSize.setBorder(new LineBorder(new Color(252, 3, 3)));
+    	}
+    	if(jtfPrice.getText() != null && !jtfPrice.getText().equalsIgnoreCase("") && isDouble(jtfPrice.getText())) {
+    		jtfPrice.setBorder(new LineBorder(new Color(171, 173, 179)));
+    	}else {
+    		jtfPrice.setBorder(new LineBorder(new Color(252, 3, 3)));
+    	}
+    }
     private boolean isDouble(String input) {
         try {
             double value = Double.parseDouble(input);

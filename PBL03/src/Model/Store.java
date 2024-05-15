@@ -6,6 +6,9 @@ public class Store {
     private String address;
     private String phoneNumber;
     private static int IDcounter = 1;
+    public Store() {
+    	brand = new Brand();
+    }
     public Store(Brand brand, String address, String phoneNumber) {
     	storeID = "STID";
     	String counter = String.format("%02d", IDcounter);

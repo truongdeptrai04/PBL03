@@ -24,6 +24,7 @@ import Controller.addProductController;
 
 import javax.swing.border.LineBorder;
 import javax.swing.UIManager;
+import javax.swing.border.MatteBorder;
 
 public class AddProductJFrame extends JFrame {
 
@@ -46,7 +47,7 @@ public class AddProductJFrame extends JFrame {
 	 */
 	public AddProductJFrame() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 800, 650);
+		setBounds(100, 100, 812, 650);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -55,18 +56,21 @@ public class AddProductJFrame extends JFrame {
 		contentPane.setLayout(null);
 		
 		panel = new JPanel();
+		panel.setBorder(new LineBorder(new Color(0, 0, 0)));
 		panel.setBackground(new Color(255, 255, 255));
-		panel.setBounds(25, 11, 750, 298);
+		panel.setBounds(25, 11, 750, 295);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
 		jtfPrice = new JTextField();
+		jtfPrice.setBorder(new LineBorder(new Color(171, 173, 179)));
 		jtfPrice.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		jtfPrice.setColumns(10);
 		jtfPrice.setBounds(59, 120, 200, 36);
 		panel.add(jtfPrice);
 		
 		jtfProductName = new JTextField();
+		jtfProductName.setBorder(new LineBorder(new Color(171, 173, 179)));
 		jtfProductName.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		jtfProductName.setColumns(10);
 		jtfProductName.setBounds(59, 40, 250, 36);
@@ -101,18 +105,21 @@ public class AddProductJFrame extends JFrame {
 		panel.add(lblNewLabel_4);
 		
 		jtfProductType = new JTextField();
+		jtfProductType.setBorder(new LineBorder(new Color(171, 173, 179)));
 		jtfProductType.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		jtfProductType.setBounds(450, 40, 200, 36);
 		panel.add(jtfProductType);
 		jtfProductType.setColumns(10);
 		
 		jtfColor = new JTextField();
+		jtfColor.setBorder(new LineBorder(new Color(171, 173, 179)));
 		jtfColor.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		jtfColor.setColumns(10);
 		jtfColor.setBounds(450, 120, 200, 36);
 		panel.add(jtfColor);
 		
 		jtfSize = new JTextField();
+		jtfSize.setBorder(new LineBorder(new Color(171, 173, 179)));
 		jtfSize.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		jtfSize.setBounds(450, 200, 110, 36);
 		panel.add(jtfSize);
@@ -177,6 +184,7 @@ public class AddProductJFrame extends JFrame {
 		contentPane.add(btnSubmit);
 		
 		jpnView = new JPanel();
+		jpnView.setBorder(new MatteBorder(1, 1, 1, 1, (Color) new Color(0, 0, 0)));
 		jpnView.setBounds(25, 310, 640, 270);
 		contentPane.add(jpnView);
 		jpnView.setLayout(null);

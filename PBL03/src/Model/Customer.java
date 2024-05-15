@@ -1,24 +1,41 @@
 package Model;
 
-class Customer {
+public class Customer {
+	private String CustomerID;
 	private String phoneNumber;
 	private String name;
 	private String address;
+	private int turnover;
 	private MembershipCard card;
-	
-	public Customer(String phoneNumber, String name, String address) {
+	public Customer() {
+		card = new MembershipCard();
+	}
+	public Customer(String CustomerID, String phoneNumber, String name, String address, int turnover) {
 		this.phoneNumber = phoneNumber;
 		this.name = name;
 		this.address = address;
+		this.turnover = turnover;
+		this.CustomerID = CustomerID;
 	}
-	
+	public void setID(String id) {
+		this.CustomerID = id;
+		}
+	public String getID() {
+		return this.CustomerID;
+	}
     public String getAddress() {
 		return address;
 	}
 	public void setAddress(String address) {
 		this.address = address;
 	}
-    public Customer(String name, String phoneNumber, boolean isVip) {
+    public int getTurnover() {
+		return turnover;
+	}
+	public void setTurnover(int turnover) {
+		this.turnover = turnover;
+	}
+	public Customer(String name, String phoneNumber, boolean isVip) {
         this.name = name;
         this.phoneNumber = phoneNumber;
     }
@@ -35,7 +52,7 @@ class Customer {
     	return this.phoneNumber;
     }
     public MembershipCard getCard() {
-		return card;
+		return this.card;
 	}
 	public void setCard(MembershipCard card) {
 		this.card = card;
